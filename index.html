@@ -1,0 +1,1764 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#11100e">
+
+<title>Undangan Pernikahan Adam & Dina</title>
+
+<style>
+:root{
+  --black:#11100e;
+  --black2:#1b1814;
+  --cream:#f6f0e4;
+  --cream2:#ebe1d1;
+  --gold:#c9a45c;
+  --gold2:#e5ca8d;
+  --text:#29251f;
+  --muted:#756b5d;
+  --white:#fffdf8;
+  --shadow:0 18px 50px rgba(0,0,0,.15);
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:Georgia,"Times New Roman",serif;
+  background:var(--cream);
+  color:var(--text);
+  overflow-x:hidden;
+}
+
+body.locked{
+  overflow:hidden;
+}
+
+/* =========================
+   ORNAMEN
+========================= */
+
+.ornament{
+  position:absolute;
+  width:130px;
+  height:130px;
+  border:1px solid rgba(201,164,92,.5);
+  border-radius:50%;
+  opacity:.55;
+  pointer-events:none;
+}
+
+.ornament:before,
+.ornament:after{
+  content:"";
+  position:absolute;
+  border:1px solid rgba(201,164,92,.3);
+  border-radius:50%;
+}
+
+.ornament:before{
+  inset:12px;
+}
+
+.ornament:after{
+  inset:26px;
+}
+
+.top-left{
+  top:25px;
+  left:-65px;
+}
+
+.top-right{
+  top:25px;
+  right:-65px;
+}
+
+.bottom-left{
+  bottom:20px;
+  left:-65px;
+}
+
+.bottom-right{
+  bottom:20px;
+  right:-65px;
+}
+
+/* =========================
+   COVER
+========================= */
+
+#cover{
+  position:fixed;
+  inset:0;
+  z-index:1000;
+  min-height:100svh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:var(--cream);
+
+  background:
+  radial-gradient(
+    circle at center,
+    rgba(201,164,92,.16),
+    transparent 38%
+  ),
+  linear-gradient(
+    145deg,
+    #0c0b0a,
+    #211d18
+  );
+
+  transition:
+    opacity .9s ease,
+    visibility .9s ease;
+}
+
+#cover.hide{
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+}
+
+.cover-inner{
+  width:min(92%,550px);
+  padding:30px 22px;
+}
+
+.bismillah{
+  color:var(--gold2);
+  font-size:25px;
+  margin-bottom:25px;
+  direction:rtl;
+}
+
+.eyebrow{
+  color:var(--gold2);
+  font:11px Arial,sans-serif;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  margin-bottom:20px;
+}
+
+.cover-title{
+  font-size:clamp(45px,13vw,80px);
+  line-height:.95;
+  font-weight:400;
+  margin-bottom:20px;
+}
+
+.cover-title span{
+  color:var(--gold);
+  font-style:italic;
+}
+
+.cover-sub{
+  color:#ddd2c0;
+  font:13px/1.8 Arial,sans-serif;
+  margin-bottom:25px;
+}
+
+.cover-date{
+  color:var(--gold2);
+  letter-spacing:3px;
+  font-size:16px;
+  margin-bottom:35px;
+}
+
+.open-btn{
+  border:1px solid var(--gold);
+  color:var(--cream);
+  background:transparent;
+  padding:14px 28px;
+  border-radius:50px;
+  cursor:pointer;
+  font:11px Arial,sans-serif;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  transition:.3s;
+}
+
+.open-btn:hover{
+  background:var(--gold);
+  color:var(--black);
+}
+
+/* =========================
+   NAVIGASI
+========================= */
+
+nav{
+  position:fixed;
+  z-index:100;
+  left:50%;
+  bottom:14px;
+  transform:translateX(-50%);
+
+  width:min(94%,450px);
+
+  background:rgba(17,16,14,.93);
+  backdrop-filter:blur(12px);
+
+  border:1px solid rgba(201,164,92,.35);
+  border-radius:50px;
+
+  display:flex;
+  justify-content:space-around;
+
+  padding:8px;
+
+  box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+
+nav a{
+  color:#eee3d1;
+  text-decoration:none;
+
+  font:9px Arial,sans-serif;
+
+  padding:9px 7px;
+  border-radius:30px;
+}
+
+nav a:hover{
+  background:rgba(201,164,92,.18);
+}
+
+/* =========================
+   SECTION
+========================= */
+
+section{
+  position:relative;
+  padding:90px 20px;
+  overflow:hidden;
+}
+
+.container{
+  width:min(100%,900px);
+  margin:auto;
+}
+
+/* =========================
+   HERO
+========================= */
+
+#home{
+  min-height:100svh;
+  display:flex;
+  align-items:center;
+  text-align:center;
+  background:var(--cream);
+}
+
+.hero{
+  width:100%;
+}
+
+.hero-small{
+  color:var(--gold);
+  font:11px Arial,sans-serif;
+  letter-spacing:5px;
+  text-transform:uppercase;
+}
+
+.hero h1{
+  font-size:clamp(55px,16vw,120px);
+  font-weight:400;
+  line-height:.85;
+  margin:25px 0;
+}
+
+.hero h1 span{
+  color:var(--gold);
+  font-style:italic;
+}
+
+.hero-date{
+  font:13px Arial,sans-serif;
+  letter-spacing:2px;
+  color:var(--muted);
+}
+
+/* =========================
+   SECTION TITLE
+========================= */
+
+.section-title{
+  text-align:center;
+  margin-bottom:35px;
+}
+
+.section-title .small{
+  color:var(--gold);
+  font:10px Arial,sans-serif;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  margin-bottom:10px;
+}
+
+.section-title h2{
+  font-size:clamp(30px,8vw,52px);
+  font-weight:400;
+}
+
+.gold-line{
+  width:60px;
+  height:1px;
+  background:var(--gold);
+  margin:15px auto 0;
+}
+
+/* =========================
+   COUNTDOWN
+========================= */
+
+#countdown{
+  background:var(--black);
+  color:var(--cream);
+}
+
+.countdown-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+
+  max-width:650px;
+  margin:auto;
+}
+
+.count-box{
+  border:1px solid rgba(201,164,92,.35);
+  padding:18px 7px;
+  text-align:center;
+  border-radius:12px;
+  background:rgba(255,255,255,.025);
+}
+
+.count-box strong{
+  display:block;
+  color:var(--gold2);
+  font-size:clamp(25px,8vw,45px);
+  font-weight:400;
+}
+
+.count-box span{
+  display:block;
+  font:8px Arial,sans-serif;
+  letter-spacing:2px;
+  color:#b9ae9e;
+  margin-top:5px;
+}
+
+/* =========================
+   SAMBUTAN
+========================= */
+
+#greeting{
+  background:var(--cream);
+  text-align:center;
+}
+
+.greeting-text{
+  max-width:750px;
+  margin:auto;
+  font:14px/2 Arial,sans-serif;
+  color:var(--muted);
+}
+
+.greeting-text strong{
+  color:var(--text);
+}
+
+.arabic-small{
+  direction:rtl;
+  font-size:25px;
+  line-height:2;
+  margin-bottom:20px;
+  color:var(--text);
+}
+
+.salam{
+  margin-top:22px;
+  color:var(--text);
+  font-family:Georgia,serif;
+  font-size:17px;
+}
+
+/* =========================
+   COUPLE
+========================= */
+
+.couple-grid{
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  align-items:center;
+  gap:25px;
+}
+
+.person{
+  text-align:center;
+}
+
+.person h3{
+  font-size:clamp(30px,8vw,48px);
+  font-weight:400;
+  margin-bottom:12px;
+}
+
+.person p{
+  font:12px/1.9 Arial,sans-serif;
+  color:var(--muted);
+}
+
+.heart{
+  width:60px;
+  height:60px;
+
+  border:1px solid var(--gold);
+  border-radius:50%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  color:var(--gold);
+  font-size:24px;
+}
+
+/* =========================
+   ACARA
+========================= */
+
+#event{
+  background:#eee5d7;
+}
+
+.event-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+}
+
+.event-card{
+  background:var(--white);
+
+  border:1px solid rgba(201,164,92,.35);
+
+  padding:30px 20px;
+
+  text-align:center;
+
+  border-radius:18px;
+
+  box-shadow:var(--shadow);
+}
+
+.event-icon{
+  color:var(--gold);
+  font-size:27px;
+  margin-bottom:15px;
+}
+
+.event-card h3{
+  font-size:25px;
+  font-weight:400;
+  margin-bottom:12px;
+}
+
+.event-card p{
+  font:12px/1.9 Arial,sans-serif;
+  color:var(--muted);
+}
+
+/* =========================
+   AYAT
+========================= */
+
+#quote{
+  background:var(--black2);
+  color:var(--cream);
+  text-align:center;
+}
+
+.arabic{
+  font-size:clamp(24px,7vw,40px);
+  line-height:2;
+  direction:rtl;
+  margin-bottom:25px;
+}
+
+.translation{
+  max-width:700px;
+  margin:auto;
+
+  color:#cfc3b2;
+
+  font:13px/2 Arial,sans-serif;
+}
+
+.source{
+  color:var(--gold2);
+  margin-top:20px;
+
+  font:10px Arial,sans-serif;
+  letter-spacing:2px;
+}
+
+/* =========================
+   LOCATION
+========================= */
+
+.location-box{
+  background:var(--black);
+  color:var(--cream);
+
+  padding:35px 22px;
+
+  border-radius:20px;
+
+  text-align:center;
+
+  box-shadow:var(--shadow);
+}
+
+.location-box h3{
+  font-size:30px;
+  font-weight:400;
+  margin-bottom:12px;
+}
+
+.location-box p{
+  color:#cfc3b2;
+  font:13px/1.9 Arial,sans-serif;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.action-row{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:25px;
+}
+
+.action{
+  display:inline-block;
+
+  text-decoration:none;
+
+  padding:13px 20px;
+
+  border-radius:40px;
+
+  border:1px solid var(--gold);
+
+  color:var(--cream);
+
+  font:11px Arial,sans-serif;
+
+  letter-spacing:1px;
+
+  transition:.3s;
+}
+
+.action.gold{
+  background:var(--gold);
+  color:var(--black);
+}
+
+.action:hover{
+  transform:translateY(-2px);
+}
+
+/* =========================
+   RSVP
+========================= */
+
+#rsvp{
+  background:var(--cream);
+  text-align:center;
+}
+
+.rsvp-text{
+  max-width:650px;
+  margin:auto;
+
+  color:var(--muted);
+
+  font:13px/2 Arial,sans-serif;
+}
+
+/* =========================
+   PENUTUP
+========================= */
+
+#closing{
+  text-align:center;
+
+  min-height:80vh;
+
+  display:flex;
+  align-items:center;
+
+  background:#eee5d7;
+}
+
+.closing-text{
+  max-width:700px;
+  margin:auto;
+}
+
+.closing-text p{
+  color:var(--muted);
+
+  font:14px/2 Arial,sans-serif;
+
+  margin-bottom:15px;
+}
+
+.signature{
+  font-size:clamp(40px,11vw,70px);
+  margin-top:30px;
+  font-weight:400;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+  background:var(--black);
+
+  color:#8e8477;
+
+  text-align:center;
+
+  padding:35px 20px 100px;
+
+  font:10px Arial,sans-serif;
+
+  letter-spacing:1px;
+}
+
+/* =========================
+   MUSIC
+========================= */
+
+#musicBtn{
+  position:fixed;
+
+  z-index:150;
+
+  top:15px;
+  right:15px;
+
+  width:43px;
+  height:43px;
+
+  border-radius:50%;
+
+  border:1px solid var(--gold);
+
+  background:rgba(17,16,14,.9);
+
+  color:var(--gold2);
+
+  cursor:pointer;
+
+  display:none;
+}
+
+/* =========================
+   TOP BUTTON
+========================= */
+
+#topBtn{
+  position:fixed;
+
+  z-index:140;
+
+  right:15px;
+  bottom:85px;
+
+  width:40px;
+  height:40px;
+
+  border:1px solid var(--gold);
+
+  border-radius:50%;
+
+  background:var(--black);
+
+  color:var(--gold2);
+
+  cursor:pointer;
+
+  opacity:0;
+
+  pointer-events:none;
+
+  transition:.3s;
+}
+
+#topBtn.show{
+  opacity:1;
+  pointer-events:auto;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+.reveal{
+  opacity:0;
+  transform:translateY(30px);
+
+  transition:
+  opacity .8s ease,
+  transform .8s ease;
+}
+
+.reveal.visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.particle{
+  position:absolute;
+
+  width:4px;
+  height:4px;
+
+  border-radius:50%;
+
+  background:var(--gold);
+
+  opacity:.3;
+
+  animation:float 8s infinite ease-in-out;
+}
+
+@keyframes float{
+
+  0%,100%{
+    transform:translateY(0);
+    opacity:.1;
+  }
+
+  50%{
+    transform:translateY(-35px);
+    opacity:.45;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px){
+
+  .couple-grid{
+    grid-template-columns:1fr;
+    gap:18px;
+  }
+
+  .heart{
+    margin:auto;
+  }
+
+  .event-grid{
+    grid-template-columns:1fr;
+  }
+
+  section{
+    padding:75px 17px;
+  }
+
+  .countdown-grid{
+    gap:6px;
+  }
+
+  .count-box{
+    padding:15px 5px;
+  }
+
+  nav a{
+    font-size:8px;
+    padding:9px 4px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+
+  *{
+    scroll-behavior:auto!important;
+    animation:none!important;
+    transition:none!important;
+  }
+}
+</style>
+</head>
+
+<body class="locked">
+
+<!-- =====================================================
+     COVER / PEMBUKA
+===================================================== -->
+
+<div id="cover">
+
+  <div class="ornament top-left"></div>
+  <div class="ornament top-right"></div>
+
+  <div class="cover-inner">
+
+    <div class="bismillah">
+      بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ
+    </div>
+
+    <div class="eyebrow">
+      The Wedding Invitation
+    </div>
+
+    <div class="cover-title">
+      Adam<br>
+      <span>&amp;</span> Dina
+    </div>
+
+    <div class="cover-sub">
+      Dengan memohon rahmat dan ridha Allah SWT,
+      kami mengundang Bapak/Ibu/Saudara/i
+      untuk hadir dalam acara pernikahan kami.
+    </div>
+
+    <div class="cover-date">
+      17 • 08 • 2026
+    </div>
+
+    <button
+      class="open-btn"
+      id="openInvitation">
+
+      Buka Undangan
+
+    </button>
+
+  </div>
+</div>
+
+
+<!-- =====================================================
+     MUSIK
+===================================================== -->
+
+<audio
+  id="music"
+  loop
+  preload="auto">
+
+  <source
+    src="musik.mp3"
+    type="audio/mpeg">
+
+</audio>
+
+<button
+  id="musicBtn"
+  aria-label="Kontrol musik">
+
+  ♫
+
+</button>
+
+
+<!-- =====================================================
+     NAVIGASI
+===================================================== -->
+
+<nav>
+
+  <a href="#home">Home</a>
+
+  <a href="#greeting">Undangan</a>
+
+  <a href="#couple">Mempelai</a>
+
+  <a href="#event">Acara</a>
+
+  <a href="#location">Lokasi</a>
+
+  <a href="#closing">Penutup</a>
+
+</nav>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section id="home">
+
+  <div class="ornament top-left"></div>
+  <div class="ornament bottom-right"></div>
+
+  <div
+    class="particle"
+    style="left:18%;top:30%;animation-delay:1s">
+  </div>
+
+  <div
+    class="particle"
+    style="left:78%;top:45%;animation-delay:3s">
+  </div>
+
+  <div class="container hero reveal">
+
+    <div class="hero-small">
+      The Wedding Of
+    </div>
+
+    <h1>
+      Adam
+      <span>&amp;</span>
+      Dina
+    </h1>
+
+    <div class="hero-date">
+      Senin, 17 Agustus 2026
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     COUNTDOWN
+===================================================== -->
+
+<section id="countdown">
+
+  <div class="container reveal">
+
+    <div class="section-title">
+
+      <div class="small">
+        Menuju Hari Bahagia
+      </div>
+
+      <h2>
+        Countdown
+      </h2>
+
+      <div class="gold-line"></div>
+
+    </div>
+
+    <div class="countdown-grid">
+
+      <div class="count-box">
+        <strong id="days">0</strong>
+        <span>HARI</span>
+      </div>
+
+      <div class="count-box">
+        <strong id="hours">0</strong>
+        <span>JAM</span>
+      </div>
+
+      <div class="count-box">
+        <strong id="minutes">0</strong>
+        <span>MENIT</span>
+      </div>
+
+      <div class="count-box">
+        <strong id="seconds">0</strong>
+        <span>DETIK</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     PEMBUKA UNDANGAN
+===================================================== -->
+
+<section id="greeting">
+
+  <div class="ornament top-right"></div>
+
+  <div class="container reveal">
+
+    <div class="section-title">
+
+      <div class="small">
+        Assalamu'alaikum
+      </div>
+
+      <h2>
+        Dengan Penuh Kebahagiaan
+      </h2>
+
+      <div class="gold-line"></div>
+
+    </div>
+
+    <div class="arabic-small">
+      بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ
+    </div>
+
+    <div class="greeting-text">
+
+      <p>
+        <strong>
+          Assalamu'alaikum Warahmatullahi Wabarakatuh
+        </strong>
+      </p>
+
+      <br>
+
+      <p>
+        Maha Suci Allah yang telah menciptakan
+        makhluk-Nya berpasang-pasangan.
+        Dengan memohon rahmat, ridha, dan
+        karunia-Nya, kami bermaksud melangsungkan
+        pernikahan putra-putri kami:
+      </p>
+
+      <p class="salam">
+        Dengan segala kerendahan hati,
+        kami mengundang Bapak/Ibu/Saudara/i
+        untuk berkenan hadir serta memberikan
+        doa restu pada hari bahagia kami.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     MEMPELAI
+===================================================== -->
+
+<section id="couple">
+
+  <div class="ornament bottom-left"></div>
+
+  <div class="container reveal">
+
+    <div class="section-title">
+
+      <div class="small">
+        Mempelai
+      </div>
+
+      <h2>
+        Dua Hati Menjadi Satu
+      </h2>
+
+      <div class="gold-line"></div>
+
+    </div>
+
+    <div class="couple-grid">
+
+      <div class="person">
+
+        <h3>
+          Adam
+        </h3>
+
+        <p>
+          Putra dari
+          <br>
+
+          <strong>
+            Bapak Sutejo
+            &amp;
+            Ibu Satinah
+          </strong>
+        </p>
+
+      </div>
+
+      <div class="heart">
+        ♥
+      </div>
+
+      <div class="person">
+
+        <h3>
+          Dina
+        </h3>
+
+        <p>
+          Putri dari
+          <br>
+
+          <strong>
+            Bapak Parman
+            &amp;
+            Ibu Minah
+          </strong>
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     ACARA
+===================================================== -->
+
+<section id="event">
+
+  <div class="container reveal">
+
+    <div class="section-title">
+
+      <div class="small">
+        Save The Date
+      </div>
+
+      <h2>
+        Detail Acara
+      </h2>
+
+      <div class="gold-line"></div>
+
+    </div>
+
+    <div class="event-grid">
+
+      <!-- AKAD -->
+
+      <article class="event-card">
+
+        <div class="event-icon">
+          ✦
+        </div>
+
+        <h3>
+          Akad Nikah
+        </h3>
+
+        <p>
+          <strong>
+            Senin, 17 Agustus 2026
+          </strong>
+        </p>
+
+        <p>
+          Pukul
+          <strong>
+            10.00 WIB
+          </strong>
+          – selesai
+        </p>
+
+        <p>
+          Bertempat di
+          <strong>
+            Dusun Saren,
+            Desa Gondowulan
+          </strong>
+        </p>
+
+      </article>
+
+
+      <!-- RESEPSI -->
+
+      <article class="event-card">
+
+        <div class="event-icon">
+          ✦
+        </div>
+
+        <h3>
+          Resepsi
+        </h3>
+
+        <p>
+          <strong>
+            Senin, 17 Agustus 2026
+          </strong>
+        </p>
+
+        <p>
+          Pukul
+          <strong>
+            10.00 WIB
+          </strong>
+          – selesai
+        </p>
+
+        <p>
+          Bertempat di
+          <strong>
+            Dusun Saren,
+            Desa Gondowulan
+          </strong>
+        </p>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     AYAT AL-QURAN
+===================================================== -->
+
+<section id="quote">
+
+  <div class="container reveal">
+
+    <div class="section-title">
+
+      <div class="small">
+        Ayat Suci Al-Qur'an
+      </div>
+
+      <h2>
+        QS. Ar-Rum: 21
+      </h2>
+
+      <div class="gold-line"></div>
+
+    </div>
+
+    <div class="arabic">
+
+      وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُمْ
+      مِنْ أَنْفُسِكُمْ أَزْوَاجًا
+      لِّتَسْكُنُوا إِلَيْهَا
+      وَجَعَلَ بَيْنَكُمْ مَّوَدَّةً
+      وَرَحْمَةً
+
+    </div>
+
+    <p class="translation">
+
+      “Dan di antara tanda-tanda kekuasaan-Nya
+      ialah Dia menciptakan untukmu pasangan
+      dari jenismu sendiri, supaya kamu merasa
+      tenteram kepadanya, dan Dia menjadikan
+      di antaramu rasa kasih dan sayang.”
+
+    </p>
+
+    <div class="source">
+      QS. AR-RUM : 21
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     LOKASI
+===================================================== -->
+
+<section id="location">
+
+  <div class="container reveal">
+
+    <div class="section-title">
+
+      <div class="small">
+        Tempat Acara
+      </div>
+
+      <h2>
+        Lokasi
+      </h2>
+
+      <div class="gold-line"></div>
+
+    </div>
+
+    <div class="location-box">
+
+      <h3>
+        Dusun Saren
+      </h3>
+
+      <p>
+
+        Desa Gondowulan
+        <br>
+
+        Kecamatan Kepil
+        <br>
+
+        Kabupaten Wonosobo
+        <br>
+
+        Jawa Tengah
+
+      </p>
+
+      <div class="action-row">
+
+        <a
+          class="action gold"
+          href="https://maps.app.goo.gl/xQNv1BdS7nhqqsuLA"
+          target="_blank"
+          rel="noopener">
+
+          📍 Lihat Lokasi
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     RSVP
+===================================================== -->
+
+<section id="rsvp">
+
+  <div class="container reveal">
+
+    <div class="section-title">
+
+      <div class="small">
+        Konfirmasi Kehadiran
+      </div>
+
+      <h2>
+        RSVP
+      </h2>
+
+      <div class="gold-line"></div>
+
+    </div>
+
+    <div class="rsvp-text">
+
+      <p>
+        Merupakan suatu kehormatan dan kebahagiaan
+        bagi kami apabila Bapak/Ibu/Saudara/i
+        berkenan hadir dalam acara pernikahan kami.
+      </p>
+
+      <br>
+
+      <p>
+        Mohon doa restu Bapak/Ibu/Saudara/i
+        agar pernikahan kami senantiasa diberikan
+        keberkahan, kebahagiaan, keharmonisan,
+        serta menjadi keluarga yang sakinah,
+        mawaddah, warahmah.
+      </p>
+
+    </div>
+
+    <div class="action-row">
+
+      <a
+        class="action gold"
+        href="https://wa.me/6282324488989?text=Assalamu%27alaikum%20Warahmatullahi%20Wabarakatuh.%20Saya%20ingin%20mengonfirmasi%20kehadiran%20di%20acara%20pernikahan%20Adam%20%26%20Dina.%20InsyaAllah%20saya%20akan%20hadir.%20Terima%20kasih."
+        target="_blank"
+        rel="noopener">
+
+        💬 Konfirmasi Kehadiran
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     PENUTUP
+===================================================== -->
+
+<section id="closing">
+
+  <div class="ornament top-left"></div>
+  <div class="ornament bottom-right"></div>
+
+  <div class="container closing-text reveal">
+
+    <div class="section-title">
+
+      <div class="small">
+        Penutup
+      </div>
+
+      <h2>
+        Doa &amp; Restu
+      </h2>
+
+      <div class="gold-line"></div>
+
+    </div>
+
+    <p>
+
+      Tidak ada yang dapat kami ungkapkan selain
+      rasa terima kasih yang sebesar-besarnya
+      atas kehadiran, perhatian, doa, dan restu
+      yang Bapak/Ibu/Saudara/i berikan kepada kami.
+
+    </p>
+
+    <p>
+
+      Merupakan suatu kebahagiaan bagi kami
+      apabila Bapak/Ibu/Saudara/i berkenan hadir
+      dan turut menjadi bagian dari hari bahagia kami.
+
+    </p>
+
+    <p>
+
+      Mohon maaf apabila terdapat kekurangan
+      dan kesalahan dalam penyampaian undangan ini.
+
+    </p>
+
+    <p>
+
+      Atas kehadiran dan doa restunya,
+      kami mengucapkan terima kasih.
+
+    </p>
+
+    <div class="salam">
+
+      Wassalamu'alaikum Warahmatullahi Wabarakatuh
+
+    </div>
+
+    <div class="signature">
+      Adam &amp; Dina
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+  <div>
+    بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ
+  </div>
+
+  <br>
+
+  THE WEDDING OF ADAM &amp; DINA
+
+  <br><br>
+
+  17 AGUSTUS 2026
+
+</footer>
+
+
+<!-- TOMBOL KE ATAS -->
+
+<button
+  id="topBtn"
+  aria-label="Kembali ke atas">
+
+  ↑
+
+</button>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+/* =========================
+   BUKA UNDANGAN
+========================= */
+
+const cover =
+document.getElementById("cover");
+
+const openBtn =
+document.getElementById("openInvitation");
+
+const music =
+document.getElementById("music");
+
+const musicBtn =
+document.getElementById("musicBtn");
+
+
+openBtn.addEventListener(
+  "click",
+  async function(){
+
+    cover.classList.add("hide");
+
+    document.body.classList.remove("locked");
+
+    musicBtn.style.display="block";
+
+    try{
+
+      await music.play();
+
+      musicBtn.textContent="♫";
+
+    }catch(error){
+
+      musicBtn.textContent="♪";
+
+    }
+
+  }
+);
+
+
+/* =========================
+   KONTROL MUSIK
+========================= */
+
+musicBtn.addEventListener(
+  "click",
+  function(){
+
+    if(music.paused){
+
+      music.play();
+
+      musicBtn.textContent="♫";
+
+    }else{
+
+      music.pause();
+
+      musicBtn.textContent="♪";
+
+    }
+
+  }
+);
+
+
+/* =========================
+   COUNTDOWN
+   17 AGUSTUS 2026
+   10.00 WIB
+========================= */
+
+const targetDate =
+new Date(
+  "2026-08-17T10:00:00+07:00"
+).getTime();
+
+
+function updateCountdown(){
+
+  const now =
+  new Date().getTime();
+
+  let distance =
+  targetDate - now;
+
+  if(distance < 0){
+
+    distance=0;
+
+  }
+
+
+  const days =
+  Math.floor(
+    distance /
+    (1000*60*60*24)
+  );
+
+
+  const hours =
+  Math.floor(
+    (distance /
+    (1000*60*60)) % 24
+  );
+
+
+  const minutes =
+  Math.floor(
+    (distance /
+    (1000*60)) % 60
+  );
+
+
+  const seconds =
+  Math.floor(
+    (distance/1000) % 60
+  );
+
+
+  document.getElementById(
+    "days"
+  ).textContent=days;
+
+
+  document.getElementById(
+    "hours"
+  ).textContent=hours;
+
+
+  document.getElementById(
+    "minutes"
+  ).textContent=minutes;
+
+
+  document.getElementById(
+    "seconds"
+  ).textContent=seconds;
+
+}
+
+
+updateCountdown();
+
+setInterval(
+  updateCountdown,
+  1000
+);
+
+
+/* =========================
+   ANIMASI SCROLL
+========================= */
+
+const revealElements =
+document.querySelectorAll(".reveal");
+
+
+const observer =
+new IntersectionObserver(
+  function(entries){
+
+    entries.forEach(
+      function(entry){
+
+        if(entry.isIntersecting){
+
+          entry.target
+          .classList
+          .add("visible");
+
+        }
+
+      }
+    );
+
+  },
+  {
+    threshold:0.12
+  }
+);
+
+
+revealElements.forEach(
+  function(element){
+
+    observer.observe(element);
+
+  }
+);
+
+
+/* =========================
+   TOMBOL KE ATAS
+========================= */
+
+const topBtn =
+document.getElementById("topBtn");
+
+
+window.addEventListener(
+  "scroll",
+  function(){
+
+    if(window.scrollY > 500){
+
+      topBtn.classList.add("show");
+
+    }else{
+
+      topBtn.classList.remove("show");
+
+    }
+
+  }
+);
+
+
+topBtn.addEventListener(
+  "click",
+  function(){
+
+    window.scrollTo({
+
+      top:0,
+
+      behavior:"smooth"
+
+    });
+
+  }
+);
+
+</script>
+
+</body>
+</html>
